@@ -1,0 +1,45 @@
+paths:
+  /login:
+    post:
+      tags:
+      - "pet"
+      summary: "authenticate a user"
+      description: ""
+      operationId: "uploadFile"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "order placed for purchasing the pet"
+        required: true
+        schema:
+          $ref: "#/definitions/Auth"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/AuthResponse"
+definitions:
+  Auth:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      password:
+        type: "string"
+    xml:
+      name: "Auth"
+  AuthResponse:
+    type: "object"
+    properties:
+      success:
+        type: "boolean"
+      message:
+        type: "string"
+        example: "Authentication successful!"
+      token:
+        type: "string"
+        example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTUxNzA4Nzk4LCJleHAiOjE1NTE3OTUxOTh9.UCkcel7Z0cQ-WIVp9mXcMuy_ABREJKFHERFJKQWJEQWEHSDF"
