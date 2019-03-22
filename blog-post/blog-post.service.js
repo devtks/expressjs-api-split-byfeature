@@ -1,17 +1,48 @@
-const { blogpostDb } = require('../db')
+const BlogPost = require('./blog-post.model')
 
 /*
-  * if you need to make calls to additional tables, data stores (Redis, for example), 
-  * or call an external endpoint as part of creating the blogpost, add them to this service
-*/
-const createBlogpost = async (user, content) => {
+ * if you need to make calls to additional tables, data stores (Redis, for example),
+ * or call an external endpoint as part of creating the blogpost, add them to this service
+ */
+const createBlogPost = async (user, content) => {
   try {
-    return await blogpostDb(user, content)
-  } catch(e) {
+    content.date_added = new Date()
+    return await BlogPost.create({ user, content })
+  } catch (e) {
+    throw new Error(e.message)
+  }
+}
+
+const getAllBlogPosts = async () => {
+  try {
+    return await BlogPost.find({})
+  } catch (e) {
+    throw new Error(e.message)
+  }
+}
+
+const getBlogPostsByCount = async (perPage, pageIndex) => {
+  try {
+    return await BlogPost.find()
+      .skip(perPage * pageIndex)
+      .limit(perPage)
+      .sort({ current_date: 1 })
+  } catch (e) {
+    throw new Error(e.message)
+  }
+}
+
+const getBlogPostsCount = async () => {
+  try {
+    return await BlogPost.count()
+  } catch (e) {
     throw new Error(e.message)
   }
 }
 
 module.exports = {
-  createBlogpost
+  createBlogPost,
+  getAllBlogPosts,
+  getBlogPostsByCount,
+  getBlogPostsCount
 }

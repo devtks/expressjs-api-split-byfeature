@@ -5,4 +5,6 @@ mongoose
   .then(() => console.log('DB Connected'))
   .catch(err => console.error(err))
 
-module.exports = mongoose
+module.exports = {
+  mongoose
+}

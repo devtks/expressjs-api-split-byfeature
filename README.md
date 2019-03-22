@@ -29,7 +29,7 @@ Here are some of the useful tools/libs we are going to use for future project
 
 [Moment](https://momentjs.com/) Parse, validate, manipulate, and display dates and times in JavaScript. (if we have to deal with Dates)
 
-[NVM for windows](https://medium.com/appseed-io/how-to-run-multiple-versions-of-node-js-with-nvm-for-windows-ffbe5c7a2b47) Tutorial to install nvm (gives you the ability to have multiple version of nodejs install and easily switch betwen them)
+[NVM for windows](https://medium.com/appseed-io/how-to-run-multiple-versions-of-node-js-with-nvm-for-windows-ffbe5c7a2b47) Tutorial to install nvm (gives you the ability to have multiple version of nodejs install and easily switch between them)
 
 
 

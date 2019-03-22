@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "58129a3b-b52b-4fbe-902e-dce0b7215293",
+		"name": "ExpressJS_Playground",
+		"description": "This is a basic API using ExpressJS and MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"myusername\",\r\n    \"password\": \"mypassword\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Example of a login call."
+			},
+			"response": [
+				{
+					"name": "Login example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"myusername\",\n    \"password\": \"mypassword\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Authentication successful!\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTMxOTkxNzgsImV4cCI6MTU1MzI4NTU3OH0.GZpzSLOmcTKHEqCV5Bc-VQaKfhgCLkOyP4-22K9ZBAw\"\n}"
+				},
+				{
+					"name": "Login failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"myusername\",\r\n    \"password\": \"wrongpassword\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-JmWDrUPxIbirDH0hheIjdLOzrFs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Mar 2019 13:58:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Auth token is not supplied\"\n} "
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"myusername\",\r\n    \"password\": \"mypassword\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Example of how to create a new user."
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"myusername2\",\r\n    \"password\": \"mypassword\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8d-ovsJgrM3In6HGyutciS9wfMzEjU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Mar 2019 19:08:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"5c928fc8a64fc6059c38e62b\",\n    \"username\": \"myusername2\",\n    \"password\": \"$2b$10$H/wWyZ7dTkNrzFCGpoyM/OQYED3xt0yRDQ9ryNKHDqMlXtr.cKjAm\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all blogposts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTMxODgxNzQsImV4cCI6MTU1MzI3NDU3NH0.t7IEKwWHmU1ViYAW5n_5TbxnUv_mJXXKhf6vwfjZee0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/blogpost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogpost"
+					]
+				},
+				"description": "Example of how to get all the blogposts data."
+			},
+			"response": [
+				{
+					"name": "/api/blogposts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTMxODgxNzQsImV4cCI6MTU1MzI3NDU3NH0.t7IEKwWHmU1ViYAW5n_5TbxnUv_mJXXKhf6vwfjZee0",
+								"description": "JWT Authentification token received on /login call preceded by \"Bearer \" is required.",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blogposts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogposts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3934"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f5e-CO/aenfrRGzeRsA8bJdiofgFQqo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Mar 2019 18:20:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"content\": {\n            \"title\": \"Title 1\",\n            \"post\": \"My first post\"\n        },\n        \"_id\": \"5c827525f986423fd0304cff\",\n        \"user\": \"myusername\",\n        \"__v\": 0\n    },\n    {\n        \"content\": {\n            \"title\": \"Another post\",\n            \"post\": \"I was here\"\n        },\n        \"_id\": \"5c827e0a7c47bf4af4f61642\",\n        \"user\": \"myusername\",\n        \"__v\": 0\n    },\n    {\n        \"content\": {\n            \"title\": \"3rd Post Title\",\n            \"post\": \"This is my 3rd post ever.\",\n            \"current_date\": \"2019-03-08T14:37:47.802Z\"\n        },\n        \"_id\": \"5c827e3b21630b2e94bb2763\",\n        \"user\": \"myusername\",\n        \"__v\": 0\n    },\n    {\n        \"content\": {\n            \"title\": \"My Last Post\",\n            \"post\": \"There is no more post after this one.\",\n            \"date_added\": \"2019-03-08T14:44:50.637Z\"\n        },\n        \"_id\": \"5c827fe279cffb069c51309b\",\n        \"user\": \"myusername\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get specific amount of blogposts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTMxODgxNzQsImV4cCI6MTU1MzI3NDU3NH0.t7IEKwWHmU1ViYAW5n_5TbxnUv_mJXXKhf6vwfjZee0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/blogposts?perPage=3&pageIndex=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogposts"
+					],
+					"query": [
+						{
+							"key": "perPage",
+							"value": "3"
+						},
+						{
+							"key": "pageIndex",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Example of how to get only a specific amount of blogposts (perPage) for a certain page index (pageIndex). For example if perPage is 5 and pageIndex 2, it would return to you items 10 to 15."
+			},
+			"response": [
+				{
+					"name": "/api/blogposts?perPage=3&pageIndex=1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTMxODgxNzQsImV4cCI6MTU1MzI3NDU3NH0.t7IEKwWHmU1ViYAW5n_5TbxnUv_mJXXKhf6vwfjZee0",
+								"description": "JWT Authentification token received on /login call preceded by \"Bearer \" is required.",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blogposts?perPage=3&pageIndex=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogposts"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "3"
+								},
+								{
+									"key": "pageIndex",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "444"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1bc-XdW7PylskbToY3wYX3Z9/RHJq38\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Mar 2019 19:13:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blogs\": [\n        {\n            \"content\": {\n                \"title\": \"4\",\n                \"post\": \"content\",\n                \"date_added\": \"2019-03-08T14:44:50.637Z\"\n            },\n            \"_id\": \"5c827fe279cffb069c51309b\",\n            \"user\": \"test\",\n            \"__v\": 0\n        },\n        {\n            \"content\": {\n                \"title\": \"5\",\n                \"post\": \"content\",\n                \"date_added\": \"2019-03-11T17:09:25.451Z\"\n            },\n            \"_id\": \"5c869645538be350acf771a3\",\n            \"user\": \"test\",\n            \"__v\": 0\n        },\n        {\n            \"content\": {\n                \"title\": \"6\",\n                \"post\": \"content\",\n                \"date_added\": \"2019-03-11T17:11:54.029Z\"\n            },\n            \"_id\": \"5c8696daca0d952428b91943\",\n            \"user\": \"test\",\n            \"__v\": 0\n        }\n    ],\n    \"allBlogsCount\": 28\n}"
+				}
+			]
+		},
+		{
+			"name": "Create new blogpost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"my_username\",\r\n    \"content\": {\r\n        \"title\":  \"Post Title\",\r\n        \"post\":  \"This is some post content.\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/blogpost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogpost"
+					]
+				},
+				"description": "Example of how to add a new blogpost."
+			},
+			"response": [
+				{
+					"name": "/api/blogpost",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTMxODgxNzQsImV4cCI6MTU1MzI3NDU3NH0.t7IEKwWHmU1ViYAW5n_5TbxnUv_mJXXKhf6vwfjZee0",
+								"description": "JWT Authentification token received on /login call preceded by \"Bearer \" is required.",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"my_username\",\r\n    \"content\": {\r\n        \"title\":  \"Post Title\",\r\n        \"post\":  \"This is some post content.\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blogpost",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogpost"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7-rM9AyJuqT6iOan/xHh+AW+7K/T8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Mar 2019 18:21:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Created"
+				}
+			]
+		}
+	]
+}
