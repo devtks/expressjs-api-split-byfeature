@@ -1,4 +1,11 @@
-const { createBlogPost, getAllBlogPosts, getBlogPostsByCount, getBlogPostsCount, getBlogPostById } = require('./blog-post.service');
+const {
+  createBlogPost,
+  getAllBlogPosts,
+  getBlogPostsByCount,
+  getBlogPostsCount,
+  getBlogPostById,
+  deleteBlogPostById
+} = require('./blog-post.service');
 
 /*
  * call other imported services, or same service but different functions here if you need to
@@ -55,8 +62,25 @@ const getSingleBlogPost = async (req, res, next) => {
   }
 }
 
+const deleteSingleBlogPost = async (req, res, next) => {
+  const { id } = req.params
+  try {
+    let result = await deleteBlogPostById(id)
+
+    res.json({
+      item: id,
+      deleted: result.deletedCount == 1
+    })
+    next()
+  } catch (e) {
+    console.log(e.message)
+    next(e)
+  }
+}
+
 module.exports = {
   postBlogPost,
   getBlogPosts,
-  getSingleBlogPost
+  getSingleBlogPost,
+  deleteSingleBlogPost
 }

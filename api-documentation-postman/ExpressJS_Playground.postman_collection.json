@@ -762,6 +762,101 @@
 					"body": "{\n    \"blog\": [\n        {\n            \"content\": {\n                \"title\": \"1\",\n                \"post\": \"dsfaasdfadsfasdsdsdf\"\n            },\n            \"_id\": \"5c827525f986423fd0304cff\",\n            \"user\": \"test\",\n            \"__v\": 0\n        }\n    ]\n}"
 				}
 			]
+		},
+		{
+			"name": "Delete single blogpost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "Deleting a blogpost by passing the id of the blogpost in the URL."
+			},
+			"response": [
+				{
+					"name": "Delete single blogpost",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTM1MjA4NzcsImV4cCI6MTU1MzYwNzI3N30.vkUl_JSblrR3_lpxp8hfhnL8cqE5B9FU9tVOSh6A_kM",
+								"description": "JWT Authentification token received on /login call preceded by \"Bearer \" is required.",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blogpost/delete/5c86979731001c1eaca3225d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogpost",
+								"delete",
+								"5c86979731001c1eaca3225d"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-8X7uitdFv4mcNd2aNGVHsAPMJmk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2019 17:38:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item\": \"5c86979731001c1eaca3225d\",\n    \"deleted\": true\n}"
+				}
+			]
 		}
 	]
 }

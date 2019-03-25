@@ -48,10 +48,19 @@ const getBlogPostById = async (id) => {
   }
 }
 
+const deleteBlogPostById = async (id) => {
+  try {
+    return await BlogPost.deleteOne({ "_id": Object(id) })
+  } catch (e) {
+    throw new Error(e.message)
+  }
+}
+
 module.exports = {
   createBlogPost,
   getAllBlogPosts,
   getBlogPostsByCount,
   getBlogPostsCount,
-  getBlogPostById
+  getBlogPostById,
+  deleteBlogPostById
 }
