@@ -537,6 +537,11 @@
 						"key": "Accept",
 						"value": "application/json",
 						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTMxODgxNzQsImV4cCI6MTU1MzI3NDU3NH0.t7IEKwWHmU1ViYAW5n_5TbxnUv_mJXXKhf6vwfjZee0",
+						"type": "text"
 					}
 				],
 				"body": {
@@ -544,7 +549,7 @@
 					"raw": "{\r\n    \"user\": \"my_username\",\r\n    \"content\": {\r\n        \"title\":  \"Post Title\",\r\n        \"post\":  \"This is some post content.\"\r\n    }\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/blogpost",
+					"raw": "http://localhost:3000/api/addBlogpost",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -552,7 +557,7 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"blogpost"
+						"addBlogpost"
 					]
 				},
 				"description": "Example of how to add a new blogpost."
@@ -586,7 +591,7 @@
 							"raw": "{\r\n    \"user\": \"my_username\",\r\n    \"content\": {\r\n        \"title\":  \"Post Title\",\r\n        \"post\":  \"This is some post content.\"\r\n    }\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/blogpost",
+							"raw": "http://localhost:3000/api/addBlogpost",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -594,7 +599,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"blogpost"
+								"addBlogpost"
 							]
 						}
 					},
@@ -633,6 +638,128 @@
 					],
 					"cookie": [],
 					"body": "Created"
+				}
+			]
+		},
+		{
+			"name": "Get single blogpost",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTM1MjA4NzcsImV4cCI6MTU1MzYwNzI3N30.vkUl_JSblrR3_lpxp8hfhnL8cqE5B9FU9tVOSh6A_kM",
+						"description": "JWT Authentification token received on /login call preceded by \"Bearer \" is required.",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/blogpost/5c827525f986423fd0304cff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blogpost",
+						"5c827525f986423fd0304cff"
+					]
+				},
+				"description": "This will get blogpost by id. By passing the correct id in the URL (in this scenario \"5c827525f986423fd0304cff\"), the API will go in the db and try to find the blogpost by id."
+			},
+			"response": [
+				{
+					"name": "Get single blogpost",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im15dXNlcm5hbWUiLCJpYXQiOjE1NTM1MjA4NzcsImV4cCI6MTU1MzYwNzI3N30.vkUl_JSblrR3_lpxp8hfhnL8cqE5B9FU9tVOSh6A_kM",
+								"description": "JWT Authentification token received on /login call preceded by \"Bearer \" is required.",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blogpost/5c827525f986423fd0304cff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blogpost",
+								"5c827525f986423fd0304cff"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79-AqBzpyJLSRP6ROmXl7MWmA5f3Yo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2019 14:30:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blog\": [\n        {\n            \"content\": {\n                \"title\": \"1\",\n                \"post\": \"dsfaasdfadsfasdsdsdf\"\n            },\n            \"_id\": \"5c827525f986423fd0304cff\",\n            \"user\": \"test\",\n            \"__v\": 0\n        }\n    ]\n}"
 				}
 			]
 		}

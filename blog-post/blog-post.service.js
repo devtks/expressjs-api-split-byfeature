@@ -40,9 +40,18 @@ const getBlogPostsCount = async () => {
   }
 }
 
+const getBlogPostById = async (id) => {
+  try {
+    return await BlogPost.find({ "_id": Object(id) })
+  } catch (e) {
+    throw new Error(e.message)
+  }
+}
+
 module.exports = {
   createBlogPost,
   getAllBlogPosts,
   getBlogPostsByCount,
-  getBlogPostsCount
+  getBlogPostsCount,
+  getBlogPostById
 }
